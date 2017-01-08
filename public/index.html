@@ -36,8 +36,9 @@
 
         <div class="petDisplay, container">
             <div ng-repeat="pet in petDbResults">
-                <div class="col-lg-3">
-                    <p class="petView"><strong>{{pet.name}}</strong>, {{pet.type}}, Age: {{pet.age}}</p>
+                <div class="col-md-4">
+                    <p class="petView"><strong>{{pet.name}}</strong> ({{pet.type}})</p>
+                    <p class="petInfo">Age: {{pet.age}}</p>
                     <p><img ng-src="{{pet.pic}}" /></p>
                 </div>
             </div>
