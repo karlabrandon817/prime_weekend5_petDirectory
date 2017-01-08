@@ -7,6 +7,8 @@ Technologies Used
 * Express
 * Angular
 * Node
+* CSS
+* Bootstrap 
 * HTML5
 
 Assignment Description
