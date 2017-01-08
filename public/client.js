@@ -25,7 +25,10 @@ myApp.controller('PetDirController', ['$scope', '$http', function($scope, $http)
             pic: $scope.picIn
         }; //end vnewPet
         console.log('adding...', newPet);
-
+        $scope.nameIn = '';
+        $scope.typeIn = '';
+        $scope.ageIn = '';
+        $scope.picIn = '';
         $http({
             method: "POST",
             url: "/allpets",
