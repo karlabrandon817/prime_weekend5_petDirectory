@@ -19,12 +19,11 @@
 </head>
 
 <body ng-app='myApp'>
-    <h1>The Pets of Tau</h1>
 
+    <h1>The Pets of Tau</h1>
     <p class="intro">
         To add your pet to our database: Enter your pet's information into the fields below then click the "Add Your Pet" button.
     </p>
-
     <div ng-controller='PetDirController'>
         <form id="petForm">
             <input type="text" placeholder="Pet's Name" ng-model=nameIn>
@@ -33,7 +32,6 @@
             <input type="text" placeholder="Pic URL" ng-model=picIn>
             <button type="button" class="buttonAdd" ng-click="addPet()">Add Your Pet!</button>
         </form>
-
         <div class="petDisplay, container">
             <div ng-repeat="pet in petDbResults">
                 <div class="col-md-4">
