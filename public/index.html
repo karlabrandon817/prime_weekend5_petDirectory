@@ -5,25 +5,35 @@
     <meta charset="utf-8">
     <script src="/vendors/angular.min.js" charset="utf-8"></script>
     <script src="client.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="/styles.css">
     <title>Tau Pet Directory</title>
 </head>
 
 <body ng-app='myApp'>
     <h1>The Pets of Tau</h1>
-    <div ng-controller='PetDirController'>
-        <h3>Add Your Pet to the Database:</h3>
-        <input type="text" placeholder="Pet's Name" ng-model=nameIn>
-        <input type="text" placeholder="Pet Type (e.g. cat)" ng-model=typeIn>
-        <input type="number" placeholder="Pet's Age" ng-model=ageIn>
-        <input type="text" placeholder="Pic URL" ng-model=picIn>
-        <button type="button" ng-click="addPet()">Add Your Pet!</button>
 
-        <h3>Our Pets</h3>
+    <p class="intro">
+        To add your pet to our database:
+        <ul>
+            <li>Enter your pet's information into the fields below</li>
+            <li>Click the "Add Your Pet" button</li>
+        </ul>
+    </p>
+
+    <div ng-controller='PetDirController'>
+        <form>
+            <input type="text" placeholder="Pet's Name" ng-model=nameIn>
+            <input type="text" placeholder="Pet Type (e.g. cat)" ng-model=typeIn>
+            <input type="number" placeholder="Pet's Age" ng-model=ageIn>
+            <input type="text" placeholder="Pic URL" ng-model=picIn>
+            <button type="button" ng-click="addPet()">Add Your Pet!</button>
+        </form>
+        <h3>All Pets</h3>
         <div ng-repeat="pet in petDbResults">
-            <p>{{pet.name}} {{pet.type}} {{pet.age}} <img ng-src="{{pet.pic}}" /></p>
+            <p class="petView"><strong>{{pet.name}}</strong>, {{pet.type}}, Age: {{pet.age}}</p>
+            <p><img class="img-responsive" ng-src="{{pet.pic}}" /></p>
         </div>
     </div>
-
 
 </body>
 

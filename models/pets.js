@@ -3,10 +3,22 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var petSchema = new Schema({
-    name: String,
-    type: String,
-    age: Number,
-    pic: String
+    name: {
+        type: String,
+        required: true
+    },
+    type: {
+        type: String,
+        required: true
+    },
+    age: {
+        type: Number,
+        required: true
+    },
+    pic: {
+        type: String,
+        required: true
+    }
 }); //end var petSchema
 
 var petDirectory = mongoose.model('pets', petSchema);

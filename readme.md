@@ -26,3 +26,6 @@ Name (example, Grilled Cheese)
 Animal (example, Cat),
 Age (example, 14)
 Image Url
+
+
+<ng-include class="col-sm-4" src="''"></ng-include>
