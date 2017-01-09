@@ -8,6 +8,11 @@ var path = require('path');
 app.set('port', (process.env.PORT || 3003));
 
 app.use(express.static('public'));
+app.use(bodyParser.json());
+app.use('/allpets', petRouter);
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
 app.get('/', function(req, res) {
     var pathToSend = path.join(__dirname, '../public/index.html');
@@ -20,8 +25,6 @@ app.listen(app.get('port'), function() {
     console.log('Listening on port: ', app.get("port"));
 }); //end app.listen
 
-app.use(bodyParser.json());
-app.use('/allpets', petRouter);
 
 mongoose.connect('mongodb://localhost:27017/petDirectory');
 //connect to db
