@@ -24,7 +24,7 @@ myApp.controller('PetDirController', ['$scope', '$http', function($scope, $http)
             type: $scope.typeIn,
             age: $scope.ageIn,
             pic: $scope.picIn
-        }; //end vnewPet
+        }; //end newPet
         console.log('adding...', newPet);
         $scope.nameIn = '';
         $scope.typeIn = '';
@@ -34,8 +34,10 @@ myApp.controller('PetDirController', ['$scope', '$http', function($scope, $http)
             method: "POST",
             url: "/allpets",
             data: newPet
-        }).then();
-        $scope.getPet();
+        }).then(function(response) {
+            $scope.getPet();
+        });
+
     }; //end $scope.addPet
 
     $scope.getPet();
