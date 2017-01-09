@@ -18,7 +18,7 @@ myApp.controller('PetDirController', ['$scope', '$http', function($scope, $http)
     }; //end $scope.getPet
 
     $scope.addPet = function() {
-        console.log('in postPet');
+        console.log('in addPet');
         var newPet = {
             name: $scope.nameIn,
             type: $scope.typeIn,
@@ -36,7 +36,7 @@ myApp.controller('PetDirController', ['$scope', '$http', function($scope, $http)
             data: newPet
         }).then();
         $scope.getPet();
-    }; //end postPet
+    }; //end $scope.addPet
 
     $scope.getPet();
 
