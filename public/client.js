@@ -5,7 +5,6 @@ var myApp = angular.module('myApp', []);
 myApp.controller('PetDirController', ['$scope', '$http', function($scope, $http) {
     console.log('Angular is up and running!');
 
-
     $scope.getPet = function() {
         console.log('seeking: ', $scope.nameIn);
         $http({
