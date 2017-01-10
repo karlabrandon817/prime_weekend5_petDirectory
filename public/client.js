@@ -25,16 +25,17 @@ myApp.controller('PetDirController', ['$scope', '$http', function($scope, $http)
             pic: $scope.picIn
         }; //end newPet
         console.log('adding...', newPet);
-        $scope.nameIn = '';
-        $scope.typeIn = '';
-        $scope.ageIn = '';
-        $scope.picIn = '';
+
         $http({
             method: "POST",
             url: "/allpets",
             data: newPet
         }).then(function(response) {
             $scope.getPet();
+            $scope.nameIn = '';
+            $scope.typeIn = '';
+            $scope.ageIn = '';
+            $scope.picIn = '';
         });
 
     }; //end $scope.addPet
